@@ -1,11 +1,17 @@
 <?php
+ session_start();
  
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    /*
-    SEU CÓDIGO AQUI
-    */
-}
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     if ($_POST["login"] == "fatec" && $_POST["senha"] == "portaria") {
+         $_SESSION["online"] = true;
+         $_SESSION["username"] = "Portaria Fatec";
+         header("Location: principal.php");
+         exit;
+     } else {
+         $mensagem = "Acesso incorreto! Tente novamente.";
+     }
+ }
+ 
 ?>
  
 <!DOCTYPE html>
@@ -26,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="index.php" method="POST">
             <div class="form-group">
                 <label>Nome</label>
-                <input type="text" name="nome" class="form-control" value="fatec">
+                <input type="text" name="login" class="form-control" value="fatec">
                 <span class="help-block"></span>
             </div>    
             <div class="form-group">

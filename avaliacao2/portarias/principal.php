@@ -21,7 +21,6 @@
     </div>
     <p>
 
-
         <a href="registros.php" class="btn btn-primary">Verificar Veículos</a>
         <br><br>
         <a href="cadastro.php" class="btn btn-primary">Cadastro Veículos</a>

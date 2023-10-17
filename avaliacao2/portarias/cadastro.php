@@ -20,6 +20,7 @@
         </h1>
     </div>
     <p>
+        <div class="container">
     <form action="cadastro_placa.php" method="POST">
         <div class="form-group">
             <label>Aluno</label>
@@ -35,6 +36,7 @@
             <input type="submit" class="btn btn-primary" value="Cadastrar">
         </div>
     </form>
+    </div>
 
     <a href="principal.php" class="btn btn-primary">Voltar</a>
     <br><br>
