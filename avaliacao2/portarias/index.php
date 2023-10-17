@@ -1,17 +1,25 @@
 <?php
  session_start();
  
+ // Verifica se a solicitação é um POST
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-     if ($_POST["login"] == "fatec" && $_POST["senha"] == "portaria") {
+    
+    // Verifica se o login e senha estão conforme.
+    if ($_POST["login"] == "fatec" && $_POST["senha"] == "portaria") {
+
+        // Define a variável da sessão "online" como V.
          $_SESSION["online"] = true;
+
+         // Define o nome do usuário nessa variável
          $_SESSION["username"] = "Portaria Fatec";
+
+         // Redireciona o usuário para "principal.php".
          header("Location: principal.php");
          exit;
      } else {
          $mensagem = "Acesso incorreto! Tente novamente.";
      }
- }
- 
+ } 
 ?>
  
 <!DOCTYPE html>

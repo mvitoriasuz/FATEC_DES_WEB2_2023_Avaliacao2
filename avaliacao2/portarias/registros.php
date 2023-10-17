@@ -3,14 +3,24 @@
     require_once('dados_banco.php');
 
     try {
+        // Define a string de conexão com as variáveis do servidor e do banco de dados.
         $dsn = "mysql:host=$servername;dbname=$dbname";
+
+        // Cria uma instância da classe PDO para estabelecer a conexão com o banco de dados.
         $conn = new PDO($dsn, $username, $password);
-        // set the PDO error mode to exception
+
+        // Define o modo de erro do objeto PDO para "ERRMODE_EXCEPTION".
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Define a consulta SQL para selecionar os registros
         $sql = "SELECT * FROM veiculos";
     }catch(PDOException $e){
+
+        // Se ocorrer uma exceção (erro), exibe a consulta SQL que causou o erro e a mensagem de erro.
         echo $sql . "<br>" . $e->getMessage();
     }
+
+    // Executa a consulta SQL e armazena o resultado em $stmt.
     $stmt = $conn->query($sql);
     $conn = NULL;
 ?>

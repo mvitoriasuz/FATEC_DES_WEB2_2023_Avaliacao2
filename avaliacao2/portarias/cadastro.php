@@ -23,7 +23,7 @@
         <div class="container">
     <form action="cadastro_placa.php" method="POST">
         <div class="form-group">
-            <label>Aluno</label>
+            <label>Aluno</label>''
             <input type="text" name="aluno" class="form-control" value="" maxlength="50">
             <span class="help-block"></span>
         </div>    
